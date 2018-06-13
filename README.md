@@ -27,6 +27,8 @@ So when the user loads the frontpage (at "/"), React fires a loadUsers function 
 
 With the initial get request for the todos and posts, I make a redux action to figure out the longest and shortest title for the posts and todos and the longest and shortest body for the posts.  These are all kept in the Redux state and pulled whenever a new post or todo is made.
 
+Update on Post requests:  This is a fake json placeholder server that I didnt clone into my local.  My post requests would return with success, but since it's fake-- they can't be "GET" requested into my project.  I did what I could and basically built out my posts requests with a theoretical success item.  
+
 ### Design
 I used Styled Components for all of my styling in this project.  I know how to use SASS and CSS but I prefer styled components for the Javascript-yness of it.  I made conditionals within the styled components sheet to check if a todo is completed, if it is-- then the props would be rendered differently-- all through one line instead of separate entities in SASS/CSS.
 
