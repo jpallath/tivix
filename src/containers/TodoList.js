@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { fetchTodos, addTodo } from "../store/actions/todo";
 import AddData from "../components/addData";
 import Todo from "../components/todo";

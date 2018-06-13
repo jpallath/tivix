@@ -17,8 +17,6 @@ class Todo extends Component {
     };
     render() {
         let { id, title, completed } = this.props;
-        let { completeState } = this.state;
-        let todoListItem = {};
         return (
             <TodoItem
                 key={id}

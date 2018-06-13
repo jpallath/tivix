@@ -83,14 +83,6 @@ export const ButtonContainer = styled.div`
     }
 `;
 
-const Post = styled.li`
-    background: white;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border-radius: 3px;
-`;
-
 export const PostItem = styled.li`
     width: 100%;
     list-style: none;
