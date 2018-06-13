@@ -10,7 +10,6 @@ class Post extends Component {
 
     render() {
         let { id, title, body } = this.props;
-        console.log(this.props);
         return (
             <PostItem key={id}>
                 <h2>{title}</h2>
