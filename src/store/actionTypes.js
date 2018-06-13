@@ -5,6 +5,8 @@ export const LOAD_TODOS = "LOAD_TODOS";
 export const ADD_TODO = "ADD_TODO";
 export const ADD_MIN_TODO = "ADD_MIN_TODO";
 export const ADD_MAX_TODO = "ADD_MAX_TODO";
+export const SWITCH_TODO_STATUS = "SWITCH_TODO_STATUS";
+export const DELETE_TODO = "DELETE_TODO";
 
 export const LOAD_POSTS = "LOAD_POSTS";
 export const ADD_POST = "ADD_POST";

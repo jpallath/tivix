@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form } from "../styledComponents/styles";
 
 class AddPostData extends Component {
     constructor(props) {
@@ -26,27 +27,31 @@ class AddPostData extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleNewData}>
-                <label htmlFor="post_title">
-                    New Post Title:
-                    <input
-                        type="text"
-                        name="title"
-                        value={this.state.title}
-                        onChange={this.handleTitleChange.bind(this)}
-                    />
-                </label>
-                <label htmlFor="post_body">
-                    Description
-                    <input
-                        type="text"
-                        name="body"
-                        value={this.state.body}
-                        onChange={this.handleBodyChange.bind(this)}
-                    />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <Form onSubmit={this.handleNewData}>
+                <div>
+                    <label htmlFor="post_title">
+                        New Post:
+                        <input
+                            type="text"
+                            name="title"
+                            value={this.state.title}
+                            onChange={this.handleTitleChange.bind(this)}
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label htmlFor="post_body">
+                        Description
+                        <textarea
+                            type="text"
+                            name="body"
+                            value={this.state.body}
+                            onChange={this.handleBodyChange.bind(this)}
+                        />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </div>
+            </Form>
         );
     }
 }

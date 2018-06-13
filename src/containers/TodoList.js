@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchTodos, addTodo } from "../store/actions/todo";
 import AddData from "../components/addData";
+import Todo from "../components/todo";
+import { TodoListBox, ButtonContainer } from "../styledComponents/styles";
 
 class TodoList extends Component {
     constructor(props) {
@@ -23,7 +25,6 @@ class TodoList extends Component {
             userId: currentUser,
             title: title,
             completed: false
-            // id: todos.length + 1
         };
         this.props.addTodo(newTodo);
     }
@@ -41,6 +42,8 @@ class TodoList extends Component {
             filteredComponent = todos.filter(todo => {
                 return todo.title === maxTitle.title;
             });
+        } else if (eventTitle === "reset") {
+            filteredComponent = todos;
         }
         this.setState({ filteredComponent });
     };
@@ -50,21 +53,26 @@ class TodoList extends Component {
         let list = [];
         filteredComponent
             ? (list = filteredComponent.map(todo => {
-                  return <li key={todo.id}>{todo.title}</li>;
+                  return <Todo key={todo.id} {...todo} />;
               }))
-            : (list = todos.map(todo => <li key={todo.id}>{todo.title}</li>));
+            : (list = todos.map(todo => <Todo {...todo} key={todo.id} />));
         return (
-            <div>
+            <TodoListBox>
+                <h1>Todos</h1>
                 {list}
-                <Link to="/">Home</Link>
                 <AddData flow={this.addTodo.bind(this)} />
-                <button onClick={() => this.showComponent("min title")}>
-                    Shortest Todo
-                </button>
-                <button onClick={() => this.showComponent("max title")}>
-                    Longest Todo
-                </button>
-            </div>
+                <ButtonContainer>
+                    <button onClick={() => this.showComponent("min title")}>
+                        Shortest Todo
+                    </button>
+                    <button onClick={() => this.showComponent("max title")}>
+                        Longest Todo
+                    </button>
+                    <button onClick={() => this.showComponent("reset")}>
+                        Reset
+                    </button>
+                </ButtonContainer>
+            </TodoListBox>
         );
     }
 }

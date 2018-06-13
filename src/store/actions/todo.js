@@ -2,7 +2,9 @@ import {
     LOAD_TODOS,
     ADD_TODO,
     ADD_MAX_TODO,
-    ADD_MIN_TODO
+    ADD_MIN_TODO,
+    SWITCH_TODO_STATUS,
+    DELETE_TODO
 } from "../actionTypes";
 import { getTodos, postTodo } from "../../services/api";
 
@@ -18,13 +20,27 @@ export const sendTodo = todo => ({
     todo
 });
 
-// export const fetchTodos = user => {
-//     return dispatch => {
-//         getTodos(user).then(res => {
-//             dispatch(loadTodos(res));
-//         });
-//     };
-// };
+export const sendMinTitleTodo = (todo, min) => ({
+    type: ADD_MIN_TODO,
+    todo: todo,
+    min: min
+});
+
+export const sendMaxTitleTodo = (todo, max) => ({
+    type: ADD_MAX_TODO,
+    todo: todo,
+    max: max
+});
+
+export const switchTodoStatus = updatedTodos => ({
+    type: SWITCH_TODO_STATUS,
+    todos: updatedTodos
+});
+
+export const deleteTodo = updatedTodos => ({
+    type: DELETE_TODO,
+    todos: updatedTodos
+});
 
 export const fetchTodos = user => {
     return dispatch => {
@@ -66,14 +82,28 @@ export const addTodo = todo => {
     };
 };
 
-export const sendMinTitleTodo = (todo, min) => ({
-    type: ADD_MIN_TODO,
-    todo: todo,
-    min: min
-});
+export const triggerTodo = id => {
+    return (dispatch, getState) => {
+        let { todos } = getState();
+        let updatedTodos = todos.todos.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, completed: !todo.completed };
+            } else {
+                return todo;
+            }
+        });
+        dispatch(switchTodoStatus(updatedTodos));
+    };
+};
 
-export const sendMaxTitleTodo = (todo, max) => ({
-    type: ADD_MAX_TODO,
-    todo: todo,
-    max: max
-});
+export const removeTodo = id => {
+    return (dispatch, getState) => {
+        let { todos } = getState();
+        let updatedTodos = todos.todos.filter(todo => {
+            if (todo.id !== id) {
+                return todo;
+            }
+        });
+        dispatch(deleteTodo(updatedTodos));
+    };
+};

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BoxItem } from "../styledComponents/styles";
 
 class User extends Component {
     constructor(props) {
@@ -13,9 +14,12 @@ class User extends Component {
     render() {
         let { name, id } = this.props;
         return (
-            <li onClick={() => this.changeCurrentUser(id)}>
+            <BoxItem
+                className="media"
+                onClick={() => this.changeCurrentUser(id)}
+            >
                 {id}: {name}
-            </li>
+            </BoxItem>
         );
     }
 }

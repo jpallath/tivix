@@ -2,7 +2,9 @@ import {
     LOAD_TODOS,
     ADD_TODO,
     ADD_MAX_TODO,
-    ADD_MIN_TODO
+    ADD_MIN_TODO,
+    SWITCH_TODO_STATUS,
+    DELETE_TODO
 } from "../actionTypes";
 
 const initialState = {
@@ -40,6 +42,16 @@ export default function rootReducer(state = initialState, action) {
                 ...newState,
                 todos: [...newState.todos, newTodo],
                 maxTitle: action.max
+            };
+        case SWITCH_TODO_STATUS:
+            return {
+                ...newState,
+                todos: [...action.todos]
+            };
+        case DELETE_TODO:
+            return {
+                ...newState,
+                todos: [...action.todos]
             };
         default:
             return state;

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPosts, addPost } from "../store/actions/post";
 import AddPostData from "../components/addPostData";
-import styled from "styled-components";
+import Post from "../components/post";
+import { PostsListBox, ButtonContainer } from "../styledComponents/styles";
 
 class PostsList extends Component {
     constructor(props) {
@@ -57,41 +58,35 @@ class PostsList extends Component {
         let list = [];
         filteredComponent
             ? (list = filteredComponent.map(post => {
-                  return (
-                      <Post key={post.id}>
-                          <strong>{post.title}</strong>
-                          {post.body}
-                      </Post>
-                  );
+                  return <Post key={post.id} {...post} />;
               }))
             : (list = posts.map(post => {
-                  return (
-                      <Post key={post.id}>
-                          <strong>{post.title}</strong>
-                          {post.body}
-                      </Post>
-                  );
+                  return <Post key={post.id} {...post} />;
               }));
         return (
-            <div>
+            <PostsListBox>
+                <h1>Posts</h1>
                 {list}
                 <AddPostData flow={this.addPost.bind(this)} />
-                <button onClick={() => this.showComponent("min title")}>
-                    Min Title
-                </button>
-                <button onClick={() => this.showComponent("max title")}>
-                    Max Title
-                </button>
-                <button onClick={() => this.showComponent("min body")}>
-                    Min Body
-                </button>
-                <button onClick={() => this.showComponent("max body")}>
-                    Max Body
-                </button>
-                <button onClick={() => this.showComponent("reset")}>
-                    Reset
-                </button>
-            </div>
+                <ButtonContainer>
+                    {" "}
+                    <button onClick={() => this.showComponent("min title")}>
+                        Min Title
+                    </button>
+                    <button onClick={() => this.showComponent("max title")}>
+                        Max Title
+                    </button>
+                    <button onClick={() => this.showComponent("min body")}>
+                        Min Body
+                    </button>
+                    <button onClick={() => this.showComponent("max body")}>
+                        Max Body
+                    </button>
+                    <button onClick={() => this.showComponent("reset")}>
+                        Reset
+                    </button>
+                </ButtonContainer>
+            </PostsListBox>
         );
     }
 }
@@ -108,11 +103,3 @@ function mapStateToProps(reduxState) {
 }
 
 export default connect(mapStateToProps, { fetchPosts, addPost })(PostsList);
-
-const Post = styled.li`
-    background: white;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border-radius: 3px;
-`;

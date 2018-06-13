@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import User from "../components/user";
 import { connect } from "react-redux";
 import { fetchUsers, changeUser } from "../store/actions/user";
+import { Box } from "../styledComponents/styles";
 
 class UserList extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class UserList extends Component {
     }
 
     render() {
-        let { users, currentUser } = this.props;
+        let { users } = this.props;
         let list = users.map(user => (
             <User
                 changeCurrentUser={this.changeCurrentUser.bind(this)}
@@ -28,10 +29,10 @@ class UserList extends Component {
             />
         ));
         return (
-            <div>
-                <h1>{currentUser}</h1>
+            <Box className="box">
+                <h1>Users</h1>
                 {list}
-            </div>
+            </Box>
         );
     }
 }
