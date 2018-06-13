@@ -4,6 +4,11 @@ Greetings Tivix!  Thanks for getting me to this step of the job opportunity.  I 
 
 Forgive me on my MarkDown syntax.  I actually haven't worked with MarkDown for quite some time so my styling and use of it will be far from desired. 
 
+## Installation
+
+git clone this project.  cd into the project.  yarn install or npm install the dependencies and then npm start.  This project is on default on localhost:3000.
+
+
 ## Project
 
 So in the following sections, I'll explain my use of React/Redux throughout the project, the design, and the overall project.
