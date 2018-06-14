@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 const cssConstants = {
@@ -8,6 +8,26 @@ const cssConstants = {
     hoverContainerColor: "#F9C22E",
     hoverTextColor: "#53B3CB"
 };
+
+const upup = keyframes`
+  from {
+      top: 100vh;
+  }
+
+  to {
+    top: 0vh;
+  }
+`;
+
+const downdown = keyframes`
+  from {
+      top: -100vh;
+  }
+
+  to {
+    top: 0vh;
+  }
+`;
 
 export const Box = styled.div`
     background: ${cssConstants.primaryColor};
@@ -46,6 +66,8 @@ export const TodoListBox = styled.div`
     height: 120vh;
     border: ${cssConstants.secondaryColor} 3px solid;
     background: ${cssConstants.hoverContainerColor};
+    position: relative;
+    animation: ${downdown} 1s linear;
     @media (max-width: 900px) {
         width: 100vw;
         height: auto;
@@ -69,6 +91,8 @@ export const PostsListBox = TodoListBox.extend`
     width: 65vw;
     padding: 10px;
     background: ${cssConstants.hoverTextColor};
+    position: relative;
+    animation: ${upup} 1s linear;
     @media (max-width: 900px) {
         width: 100vw;
         height: auto;
