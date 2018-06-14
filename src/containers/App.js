@@ -20,7 +20,7 @@ class App extends Component {
                         />
                         <Route
                             exact
-                            path="/profile"
+                            path="/profile/:user"
                             render={props => <Profile {...props} />}
                         />
                     </Switch>

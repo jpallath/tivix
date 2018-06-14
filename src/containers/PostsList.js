@@ -12,9 +12,10 @@ class PostsList extends Component {
     }
 
     componentDidMount() {
+        let { user } = this.props.params;
         this.props.currentUser
             ? this.props.fetchPosts(this.props.currentUser)
-            : this.props.fetchPosts(1);
+            : this.props.fetchPosts(user);
     }
 
     addPost(title, body) {

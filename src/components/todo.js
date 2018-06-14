@@ -24,12 +24,14 @@ class Todo extends Component {
                 onClick={() => this.complete(id)}
             >
                 {title}
-                <button>
-                    <i className="fa fa-check" aria-hidden="true" />
-                </button>
-                <button onClick={() => this.remove(id)}>
-                    <i className="fa fa-times" aria-hidden="true" />
-                </button>
+                <span>
+                    <button>
+                        <i className="fa fa-check" aria-hidden="true" />
+                    </button>
+                    <button onClick={() => this.remove(id)}>
+                        <i className="fa fa-times" aria-hidden="true" />
+                    </button>
+                </span>
             </TodoItem>
         );
     }

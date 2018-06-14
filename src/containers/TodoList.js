@@ -13,9 +13,10 @@ class TodoList extends Component {
     }
 
     componentDidMount() {
+        let { user } = this.props.params;
         this.props.currentUser
             ? this.props.fetchTodos(this.props.currentUser)
-            : this.props.fetchTodos(1);
+            : this.props.fetchTodos(user);
     }
 
     addTodo(title) {

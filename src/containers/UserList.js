@@ -12,7 +12,7 @@ class UserList extends Component {
 
     changeCurrentUser = id => {
         this.props.changeUser(id);
-        this.props.history.push("/profile");
+        this.props.history.push(`/profile/${id}`);
     };
 
     componentDidMount() {

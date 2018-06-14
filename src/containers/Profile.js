@@ -6,10 +6,11 @@ import { ProfileBox, StyledLink } from "../styledComponents/styles";
 
 class Profile extends Component {
     render() {
+        let { match } = this.props;
         return (
             <ProfileBox>
-                <TodoList />
-                <PostsList />
+                <TodoList {...match} />
+                <PostsList {...match} />
                 <StyledLink to="/">Home</StyledLink>
             </ProfileBox>
         );
