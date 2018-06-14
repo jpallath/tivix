@@ -14,7 +14,7 @@ export const Box = styled.div`
     color: ${cssConstants.primaryTextColor};
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 120vh;
     h1 {
         text-align: center;
         font-size: 20px;
@@ -43,7 +43,7 @@ export const TodoListBox = styled.div`
     justify-content: center;
     padding: 10px;
     width: 35vw;
-    height: 100vh;
+    height: 120vh;
     border: ${cssConstants.secondaryColor} 3px solid;
     background: ${cssConstants.hoverContainerColor};
     @media (max-width: 900px) {
@@ -77,9 +77,15 @@ export const PostsListBox = TodoListBox.extend`
 
 export const ButtonContainer = styled.div`
     display: flex;
+    margin-top: 15px;
     button {
         background: ${cssConstants.secondaryColor};
         padding: 20px;
+        transition: all ease-in 0.25s;
+        &:hover {
+            background: ${cssConstants.hoverContainerColor};
+            border-color: ${cssConstants.secondaryColor};
+        }
     }
 `;
 
