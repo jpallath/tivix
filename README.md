@@ -1,5 +1,7 @@
 # Tivix -- Jerry Pallath's Challenge Report
 
+Live Project: https://tivix-jerry.herokuapp.com/
+
 Greetings Tivix!  Thanks for getting me to this step of the job opportunity.  I had a lot of fun building a Front End Todo List / Blog Project for you guys.  I really pushed my understanding of Javascript and React/Redux a tad bit further.  
 
 Forgive me on my MarkDown syntax.  I actually haven't worked with MarkDown for quite some time so my styling and use of it will be far from desired. 
