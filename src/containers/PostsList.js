@@ -70,7 +70,6 @@ class PostsList extends Component {
                 {list}
                 <AddPostData flow={this.addPost.bind(this)} />
                 <ButtonContainer>
-                    {" "}
                     <button onClick={() => this.showComponent("min title")}>
                         Min Title
                     </button>
