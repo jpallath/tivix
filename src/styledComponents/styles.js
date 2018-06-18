@@ -59,8 +59,8 @@ export const ProfileBox = styled.div`
 export const TodoListBox = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 10px;
     width: 35vw;
     height: 120vh;
@@ -68,6 +68,9 @@ export const TodoListBox = styled.div`
     background: ${cssConstants.hoverContainerColor};
     position: relative;
     animation: ${downdown} 1s linear;
+    h1 {
+        align-self: center;
+    }
     @media (max-width: 900px) {
         width: 100vw;
         height: auto;
@@ -102,6 +105,7 @@ export const PostsListBox = TodoListBox.extend`
 export const ButtonContainer = styled.div`
     display: flex;
     margin-top: 15px;
+    align-self: center;
     button {
         background: ${cssConstants.secondaryColor};
         padding: 20px;
@@ -135,6 +139,8 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 20%;
     div {
         margin: 1% 0;
     }

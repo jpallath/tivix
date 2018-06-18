@@ -24,20 +24,20 @@ export default function rootReducer(state = initialState, action) {
                 maxTitle: action.maxTitle
             };
         case ADD_TODO:
-            let newTodo = { ...action.todo, id: newState.todos.length + 1 };
+            let newTodo = { ...action.todo, id: newState.todos.length + 100 };
             return {
                 ...newState,
                 todos: [...newState.todos, newTodo]
             };
         case ADD_MIN_TODO:
-            newTodo = { ...action.todo, id: newState.todos.length + 1 };
+            newTodo = { ...action.todo, id: newState.todos.length + 100 };
             return {
                 ...newState,
                 todos: [...newState.todos, newTodo],
                 minTitle: action.min
             };
         case ADD_MAX_TODO:
-            newTodo = { ...action.todo, id: newState.todos.length + 1 };
+            newTodo = { ...action.todo, id: newState.todos.length + 100 };
             return {
                 ...newState,
                 todos: [...newState.todos, newTodo],

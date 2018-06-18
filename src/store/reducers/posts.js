@@ -28,34 +28,34 @@ export default function rootReducer(state = initialState, action) {
                 maxTitle: action.maxTitle
             };
         case ADD_POST:
-            let newPost = { ...action.post, id: newState.posts.length + 1 };
+            let newPost = { ...action.post, id: newState.posts.length + 100 };
             return {
                 ...newState,
                 posts: [...newState.posts, newPost]
             };
         case ADD_MIN_BODY_POST:
-            newPost = { ...action.post, id: newState.posts.length + 1 };
+            newPost = { ...action.post, id: newState.posts.length + 100 };
             return {
                 ...newState,
                 posts: [...newState.posts, newPost],
                 minBody: action.min
             };
         case ADD_MAX_BODY_POST:
-            newPost = { ...action.post, id: newState.posts.length + 1 };
+            newPost = { ...action.post, id: newState.posts.length + 100 };
             return {
                 ...newState,
                 posts: [...newState.posts, newPost],
                 maxBody: action.max
             };
         case ADD_MIN_TITLE_POST:
-            newPost = { ...action.post, id: newState.posts.length + 1 };
+            newPost = { ...action.post, id: newState.posts.length + 100 };
             return {
                 ...newState,
                 posts: [...newState.posts, newPost],
                 minTitle: action.min
             };
         case ADD_MAX_TITLE_POST:
-            newPost = { ...action.post, id: newState.posts.length + 1 };
+            newPost = { ...action.post, id: newState.posts.length + 100 };
             return {
                 ...newState,
                 posts: [...newState.posts, newPost],

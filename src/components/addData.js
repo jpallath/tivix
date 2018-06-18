@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form } from "../styledComponents/styles";
 
 class AddData extends Component {
     constructor(props) {
@@ -21,18 +22,17 @@ class AddData extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleNewData}>
-                <label htmlFor="todo">
-                    New Todo:
-                    <input
-                        type="text"
-                        name="title"
-                        value={this.state.title}
-                        onChange={this.handleChange.bind(this)}
-                    />
-                </label>
+            <Form onSubmit={this.handleNewData}>
+                <label htmlFor="todo">New Todo:</label>
+                <input
+                    type="text"
+                    name="title"
+                    value={this.state.title}
+                    onChange={this.handleChange.bind(this)}
+                />
+
                 <input type="submit" value="Submit" />
-            </form>
+            </Form>
         );
     }
 }

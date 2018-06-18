@@ -29,28 +29,25 @@ class AddPostData extends Component {
         return (
             <Form onSubmit={this.handleNewData}>
                 <div>
-                    <label htmlFor="post_title">
-                        New Post:
-                        <input
-                            type="text"
-                            name="title"
-                            value={this.state.title}
-                            onChange={this.handleTitleChange.bind(this)}
-                        />
-                    </label>
+                    <label htmlFor="post_title">New Post:</label>
+                    <input
+                        type="text"
+                        name="title"
+                        value={this.state.title}
+                        onChange={this.handleTitleChange.bind(this)}
+                    />
                 </div>
                 <div>
-                    <label htmlFor="post_body">
-                        Description
-                        <textarea
-                            type="text"
-                            name="body"
-                            value={this.state.body}
-                            onChange={this.handleBodyChange.bind(this)}
-                        />
-                    </label>
-                    <input type="submit" value="Submit" />
+                    <label htmlFor="post_body"> </label>
+                    Description
+                    <textarea
+                        type="text"
+                        name="body"
+                        value={this.state.body}
+                        onChange={this.handleBodyChange.bind(this)}
+                    />
                 </div>
+                <input type="submit" value="Submit" />
             </Form>
         );
     }
