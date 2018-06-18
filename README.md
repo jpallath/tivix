@@ -7,11 +7,13 @@ Below is some of the documentation in what I built and how to use this project.
 ## Table of Contents
 
 *   [Installation](#installation)
-*   Project
-*   Front End
-*   Redux
-*   React
-*   Design
+*   [Project]
+
+-   [Front End]
+
+*   [Redux]
+*   [React]
+*   [Design]
 
 Live Project: https://tivix-jerry.herokuapp.com/
 
