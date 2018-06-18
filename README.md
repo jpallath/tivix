@@ -6,7 +6,7 @@ Below is some of the documentation in what I built and how to use this project.
 
 ## Table of Contents
 
-*   Installation
+*   [Installation](#installation)
 *   Project
 *   Front End
 *   Redux
